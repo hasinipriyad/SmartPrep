@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Make `dark:` respond to a .dark class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: #9d4d75;
+  --color-accent-hover: #843f62;
+  --color-accent-soft: #ecd6e1;
+
+  --color-surface-light: #faf7f8;
+  --color-surface-dark: #171315;
+
+  --color-panel-light: #ffffff;
+  --color-panel-dark: #241e21;
+
+  --color-ink-light: #1f1a1d;
+  --color-ink-dark: #f0eaed;
+
+  --color-muted-light: #6b6168;
+  --color-muted-dark: #b3a6ad;
+}
+
+.dark {
+  --color-accent: #d98cb3;
+  --color-accent-hover: #e6a3c4;
+}
+
+body {
+  background-color: var(--color-surface-light);
+  color: var(--color-ink-light);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dark body {
+  background-color: var(--color-surface-dark);
+  color: var(--color-ink-dark);
+}
